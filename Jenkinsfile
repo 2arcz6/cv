@@ -12,19 +12,18 @@ pipeline {
             }
         }
 
-        stage('Deployment') {
+        
            
-                stage('Staging') {  
-                   
-                    steps {
-                        echo 'staging...'
-                    }
-                }
+        stage('Staging') {  
+            
+            steps {
+                echo 'staging...'
+            }
+        }
 
               
 
-            
-        }
+           
     }
 
     
