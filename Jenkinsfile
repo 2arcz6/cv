@@ -1,8 +1,6 @@
 pipeline {
     agent any
 
-
-
     stages {
 
         stage("Unit Testing") {
@@ -12,17 +10,12 @@ pipeline {
             }
         }
 
-        
-           
         stage('Staging') {  
             
             steps {
                 echo 'staging...'
             }
         }
-
-              
-
            
     }
 
