@@ -24,7 +24,7 @@ pipeline {
                         branch 'master'
                     }
                     steps {
-                        echo 'develop = master branch...'
+                        echo 'develop equals master branch...'
                     }
                 }
 
