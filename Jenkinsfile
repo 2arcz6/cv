@@ -64,7 +64,7 @@ pipeline {
 
         stage('Cleanup') {  
             options {
-                timeout(time: 1, unit: "MINUTES")
+                timeout(time: 2, unit: "MINUTES")
             }
             steps {
                 echo 'cleaning up...'
