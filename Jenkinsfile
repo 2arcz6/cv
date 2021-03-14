@@ -17,6 +17,39 @@ pipeline {
             }
         }
 
+        stage('Deployment') {
+            parallel {
+                stage('Staging') {  
+                    when {
+                        branch 'master'
+                    }
+                    steps {
+                        echo 'developing ...'
+                    }
+                }
+
+                stage('Demo') {  
+                    
+                    when {
+                        branch 'demo'
+                    }
+                    steps {
+                        echo 'demo...'
+                    }
+                }
+
+                stage('Production') {
+                    when {
+                        branch 'production'
+                    }
+                    steps {
+                        echo 'production...'
+                    }
+                }
+
+            }
+        }
+
         stage('Cleanup') {  
             
             steps {
