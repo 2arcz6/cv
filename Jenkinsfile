@@ -4,14 +4,18 @@ pipeline {
     stages {
 
         stage("Unit Testing") {
-            
+            options {
+                timeout(time: 1, unit: "MINUTES")
+            }
             steps {
                 echo 'Unit testing'
             }
         }
 
         stage('Staging') {  
-            
+            options {
+                timeout(time: 1, unit: "MINUTES")
+            }  
             steps {
                 echo 'staging...'
             }
@@ -20,16 +24,21 @@ pipeline {
         stage('Deployment') {
             parallel {
                 stage('Staging') {  
+                    options {
+                        timeout(time: 1, unit: "MINUTES")
+                    }
                     when {
                         branch 'master'
                     }
                     steps {
-                        echo 'developing ...'
+                        echo 'develop equals master branch...'
                     }
                 }
 
                 stage('Demo') {  
-                    
+                    options {
+                        timeout(time: 1, unit: "MINUTES")
+                    }
                     when {
                         branch 'demo'
                     }
@@ -39,6 +48,9 @@ pipeline {
                 }
 
                 stage('Production') {
+                    options {
+                        timeout(time: 1, unit: "MINUTES")
+                    }
                     when {
                         branch 'production'
                     }
@@ -51,7 +63,9 @@ pipeline {
         }
 
         stage('Cleanup') {  
-            
+            options {
+                timeout(time: 1, unit: "MINUTES")
+            }
             steps {
                 echo 'cleaning up...'
             }
