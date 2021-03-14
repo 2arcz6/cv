@@ -34,7 +34,7 @@ pipeline {
                         branch 'demo'
                     }
                     steps {
-                        echo 'demo test view...'
+                        echo 'demo view...'
                     }
                 }
 
