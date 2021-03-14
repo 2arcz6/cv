@@ -37,7 +37,7 @@ pipeline {
 
                 stage('Demo') {  
                     options {
-                        timeout(time: 1, unit: "MINUTES")
+                        timeout(time: 2, unit: "MINUTES")
                     }
                     when {
                         branch 'demo'
