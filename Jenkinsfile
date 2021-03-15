@@ -77,6 +77,12 @@ pipeline {
                 echo 'cleaning up...'
             }
         }
+
+        post {
+            always {
+                cleanWs()
+            }
+        }
            
     }
 
