@@ -8,11 +8,10 @@ pipeline {
                 timeout(time: 1, unit: "MINUTES")
             }
             steps {
+                sh 'sleep 30s'
                 echo 'Unit testing'
             }
-            steps {
-                sh 'sleep 10s'
-            }
+            
         }
 
         stage('Staging') {  
@@ -20,6 +19,7 @@ pipeline {
                 timeout(time: 1, unit: "MINUTES")
             }  
             steps {
+                sh 'sleep 30s'
                 echo 'staging...'
             }
         }
@@ -34,6 +34,7 @@ pipeline {
                         branch 'master'
                     }
                     steps {
+                        sh 'sleep 30s'
                         echo 'develop equals master branch...'
                     }
                 }
@@ -46,6 +47,7 @@ pipeline {
                         branch 'demo'
                     }
                     steps {
+                        sh 'sleep 30s'
                         echo 'demo view...'
                     }
                 }
@@ -58,6 +60,7 @@ pipeline {
                         branch 'production'
                     }
                     steps {
+                        sh 'sleep 30s'
                         echo 'production...'
                     }
                 }
@@ -70,6 +73,7 @@ pipeline {
                 timeout(time: 2, unit: "MINUTES")
             }
             steps {
+                sh 'sleep 30s'
                 echo 'cleaning up...'
             }
         }
