@@ -10,6 +10,9 @@ pipeline {
             steps {
                 echo 'Unit testing'
             }
+            steps {
+                sh 'sleep 10s'
+            }
         }
 
         stage('Staging') {  
